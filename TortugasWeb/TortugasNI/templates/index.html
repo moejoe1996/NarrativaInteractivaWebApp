@@ -1,0 +1,424 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+<title>Tortugas: una vista mas a fondo!</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+    body, h1, h2, h3, h4, h5 {
+        font-family: "Poppins", sans-serif
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    .w3-half img {
+        margin-bottom: -6px;
+        margin-top: 16px;
+        opacity: 0.8;
+        cursor: pointer
+    }
+
+    .w3-half img:hover {
+        opacity: 1
+    }
+
+    img {
+        z-index: 999;
+    }
+</style>
+<body>
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-indigo w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;"
+     id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft"
+       style="width:100%;font-size:22px">Cerrar Menu</a>
+    <div class="w3-container">
+        <h3 class="w3-padding-64"><b>La Tortu-<br>Familia</b></h3>
+    </div>
+    <div class="w3-bar-block">
+        <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Inicio</a>
+        <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Recuerdos</a>
+        <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Cris.</a>
+        <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Tuga, La Tortuga.</a>
+        <a href="#packages" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Martha.</a>
+        <a href="#Adolftuga" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">AdolfTuga.</a>
+        <a href="#Roberto" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Roberto.</a>
+        <a href="#Gwynn" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Gwynn.</a>
+        <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contacto</a>
+    </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-indigo w3-xlarge w3-padding">
+    <a href="javascript:void(0)" class="w3-button w3-indigo w3-margin-right" onclick="w3_open()">☰</a>
+    <span>La tortu-Familia</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+     id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+    <!-- Header -->
+    <div class="w3-container" style="margin-top:80px" id="showcase">
+        <h1 class="w3-jumbo"><b>Tortugas: una vista mas a fondo!</b></h1>
+        <h1 class="w3-xxxlarge w3-text-indigo"><b>Recuerdos.</b></h1>
+        <hr style="width:50px;border:5px solid indigo" class="w3-round">
+    </div>
+
+    <!-- Photo grid (modal) -->
+    <div class="w3-row-padding">
+        <div class="w3-half">
+            <img src="{% static 'images/friends.jpg' %}"
+                 style="width:100%" onclick="onClick(this)" alt="Panas del trabajo.">
+            <img src="{% static 'images/restaurant.jpg' %}"
+                 style="width:100%" onclick="onClick(this)" alt="Hora del Almuerzo.">
+            <img src="{% static 'images/club.jpg' %}"
+                 style="width:100%" onclick="onClick(this)" alt="De fiesta con mis amigos.">
+        </div>
+
+        <div class="w3-half">
+            <img src="{% static 'images/party.jpg' %}"
+                 style="width:100%" onclick="onClick(this)" alt="Pasandola Bien!">
+            <img src="{% static 'images/high.jpg' %}"
+                 style="width:100%" onclick="onClick(this)" alt="suuuaaavee!">
+            <img src="{% static 'images/mornings.jpg' %}"
+                 style="width:100%" onclick="onClick(this)" alt="Tomando el sol por la mañana">
+        </div>
+    </div>
+
+    <!-- Modal for full size images on click-->
+    <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+        <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+            <img id="img01" class="w3-image">
+            <p id="caption"></p>
+        </div>
+    </div>
+
+    <!-- Cris. -->
+    <div class="w3-container" id="services" style="margin-top:75px">
+        <h1 class="w3-xxxlarge w3-text-indigo"><b>Cris.</b></h1>
+        <hr style="width:50px;border:5px solid indigo" class="w3-round">
+
+        <table class="w3-table">
+            <tr>
+                <th width="25%">
+                    <div class="w3-container">
+                        <div class="w3-card-4" style="width:100%">
+                            <img src="{% static 'images/CrisTurtle.jpeg' %}" alt="Person" style="width:100%">
+                            <div class="w3-container">
+                                <h4><b>Cris</b></h4>
+                                <p>El Jefe de los Jefes</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </th>
+
+                <th>
+                    <p>
+                        Nombre Completo: Cris "El Volado" Tuga <br>
+                        Edad: 21 años. <br>
+                        Fecha de nacimiento: 18/04/2019 <br>
+                        <br>
+                        Cris es una tortuga bastante desinteresada con respecto a sus amigos y mantiene una relación
+                        leal ante ellos.
+                        Siempre que alguno necesite de su ayuda, Cris la otorgara sin ningún problema o esperando alguna
+                        recompensa.
+                        Es bastante ambicioso y puede ser un poco arrogante. Al compartir en reuniones con sus amigos,
+                        puede presentar
+                        un sentido del humor bastante oscuro, es un poco melodramático, vulgar y a pesar de que por
+                        fuera no parezca,
+                        por dentro tienen un mar de sentimientos que demostrar.
+
+
+                    </p>
+                </th>
+            </tr>
+        </table>
+        <br>
+    </div>
+
+    <!-- Tuga, La tortuga -->
+    <div class="w3-container" id="designers" style="margin-top:75px">
+        <h1 class="w3-xxxlarge w3-text-indigo"><b>Tuga, La Tortuga.</b></h1>
+        <hr style="width:50px;border:5px solid indigo" class="w3-round">
+
+        <table class="w3-table">
+            <tr>
+                <th width="25%">
+                    <div class="w3-container">
+                        <div class="w3-card-4" style="width:100%">
+                            <img src="{% static 'images/b1.png' %}" alt="Person" style="width:100%">
+                            <div class="w3-container">
+                                <h4><b>Tuga</b></h4>
+                                <p>El mejor amigo que podrias desear!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </th>
+
+                <th>
+                    <p>
+                        Nombre Completo: Juan "Tuga" Totuga <br>
+                        Edad: 154 años. <br>
+                        Fecha de nacimiento: 01/06/1865 <br>
+                        <br>
+                        Tuga es una tortuga amigable a la que no le gusta quedarse sola. Siempre se encuentra
+                        junto a Cris o alguien que le acompañe. A Tuga le gusta ser auto critico y colocarse
+                        metas para superarse a si mismo y a otros. Tuga puede ser un gran amigo con el que puedes
+                        contar. Sin embargo, hay que tener cuidado ya que puede llegar a ser vengativo.
+
+                    </p>
+                </th>
+            </tr>
+        </table>
+        <br>
+    </div>
+
+
+    <!-- Martha -->
+    <div class="w3-container" id="packages" style="margin-top:75px">
+        <h1 class="w3-xxxlarge w3-text-indigo"><b>Martha.</b></h1>
+        <hr style="width:50px;border:5px solid indigo" class="w3-round">
+
+        <table class="w3-table">
+            <tr>
+                <th width="25%">
+                    <div class="w3-container">
+                        <div class="w3-card-4" style="width:100%">
+                            <img src="{% static 'images/Tuga.jpeg' %}" alt="Person" style="width:100%">
+                            <div class="w3-container">
+                                <h4><b>Marta.</b></h4>
+                                <p>La Mama de las Tortugas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </th>
+
+                <th>
+                    <p>
+                        Nombre Completo: Marta "La posesiva" Totuga <br>
+                        Edad: 286 años. <br>
+                        Fecha de nacimiento: 06/06/1733 <br>
+                        <br>
+                        Marta, es la mamá de Cris. Ella es una tortuga poco amigable con los demás, pero
+                        un encanto con su hijo. Durante la infancia de él, Marta se convirtió en una tortuga
+                        bastante posesiva, controladora. Ella es muy pretensiosa, le fascina presumir a su hijo
+                        a donde sea que ella va. Es bastante paciente con Cris y lo ama más que cualquier
+                        cosa en el océano.
+                    </p>
+                </th>
+            </tr>
+        </table>
+        <br>
+
+
+    </div>
+
+    <!-- Adolftuga -->
+    <div class="w3-container" id="Adolftuga" style="margin-top:75px">
+        <h1 class="w3-xxxlarge w3-text-indigo"><b>AdolfTuga.</b></h1>
+        <hr style="width:50px;border:5px solid indigo" class="w3-round">
+
+        <table class="w3-table">
+            <tr>
+                <th width="25%">
+                    <div class="w3-container">
+                        <div class="w3-card-4" style="width:100%">
+                            <img src="{% static 'images/AdolfTuga.jpeg' %}" alt="Person" style="width:100%">
+                            <div class="w3-container">
+                                <h4><b>AdolfTuga</b></h4>
+                                <p>La tortuga Cinica.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </th>
+
+                <th>
+                    <p>
+                        Nombre Completo: Adolfo "El Cinico" Totuga <br>
+                        Edad: 226 años. <br>
+                        Fecha de nacimiento: 20/04/1793 <br>
+                        <br>
+                        Adolfo, Alias: Adolftuga es una tortuga introvertida, envidiosa, rebelde y bastante toxica.
+                        Tiene un aura bastante negativa y es impulsivo. Muchos le temen al verlo y no le gusta
+                        juntarse con nadie. Adolftuga le gusta la adrenalina por lo que puede ocasionar diversos actos
+                        que generen polémica en su entorno.
+                    </p>
+                </th>
+            </tr>
+        </table>
+        <br>
+    </div>
+
+    <!-- Roberto -->
+    <div class="w3-container" id="Roberto" style="margin-top:75px">
+        <h1 class="w3-xxxlarge w3-text-indigo"><b>Roberto.</b></h1>
+        <hr style="width:50px;border:5px solid indigo" class="w3-round">
+
+        <table class="w3-table">
+            <tr>
+                <th width="25%">
+                    <div class="w3-container">
+                        <div class="w3-card-4" style="width:100%">
+                            <img src="{% static 'images/r1.png' %}" alt="Person" style="width:100%">
+                            <div class="w3-container">
+                                <h4><b>Roberto</b></h4>
+                                <p>Unico entre su especie.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </th>
+
+                <th>
+                    <p>
+                        Nombre Completo: Roberto "Rob" Totuga <br>
+                        Edad: 233 años. <br>
+                        Fecha de nacimiento: 25/12/1786 <br>
+                        <br>
+                        Roberto es una tortuga bastante codiciosa. Sin embargo, es bastante leal a sus amigos y depende
+                        de ellos para presumir sus riquezas.
+                        Es sobre crítico y verdaderamente único entre su especie. Se aburre fácilmente por lo que se
+                        encuentra constantemente comprando cosas
+                        nuevas. Pierde la paciencia con facilidad y suele explotar una ola de furia cuando es molestado.
+                        Suele ser pesimista y bastante vago.
+                    </p>
+                </th>
+            </tr>
+        </table>
+        <br>
+    </div>
+
+    <!-- Gwynn -->
+    <div class="w3-container" id="Gwynn" style="margin-top:75px">
+        <h1 class="w3-xxxlarge w3-text-indigo"><b>Gwynn.</b></h1>
+        <hr style="width:50px;border:5px solid indigo" class="w3-round">
+
+        <table class="w3-table">
+            <tr>
+                <th width="25%">
+                    <div class="w3-container">
+                        <div class="w3-card-4" style="width:100%">
+                            <img src="{% static 'images/re1.png' %}" alt="Person" style="width:100%">
+                            <div class="w3-container">
+                                <h4><b>Gwynn</b></h4>
+                                <p>La Novia.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </th>
+
+                <th>
+                    <p>
+                        Nombre Completo: Gwynn "La Novia" Totuga <br>
+                        Edad: 157 años. <br>
+                        Fecha de nacimiento: 22/07/1862 <br>
+                        <br>
+                        Gwynn es una buena tortuga, un poco ingenua y a veces egoísta ya que no le gusta que otras
+                        tortugas miren
+                        Cris. Es de mente abierta y se encuentra siempre dispuesta a escuchar los problemas de los
+                        demás. Esto le
+                        permite crecer a ella como tortuga y reflexionar sobre sí misma. Suele ser bastante cautelosa
+                        con lo que
+                        desconoce y relajada.
+
+                    </p>
+                </th>
+            </tr>
+        </table>
+        <br>
+    </div>
+
+
+    <!-- Contact -->
+    <div class="w3-container" id="contact" style="margin-top:75px">
+        <h1 class="w3-xxxlarge w3-text-indigo"><b>Contacto.</b></h1>
+        <hr style="width:50px;border:5px solid indigo" class="w3-round">
+        <p>¿Tienes dudas? o ¿simplemente quieres compartir algo con nosotros? ¡Escríbenos! ¡nos encanta conocer a nuevas
+            personas!</p>
+        <form action="/action_page.php" target="_blank">
+            <div class="w3-section">
+                <label>Nombre</label>
+                <input class="w3-input w3-border" type="text" name="Name" required>
+            </div>
+            <div class="w3-section">
+                <label>Email</label>
+                <input class="w3-input w3-border" type="text" name="Email" required>
+            </div>
+            <div class="w3-section">
+                <label>Mensaje</label>
+                <input class="w3-input w3-border" type="text" name="Message" required>
+            </div>
+            <button type="submit" class="w3-button w3-block w3-padding-large w3-indigo w3-margin-bottom"
+                    onclick="msg()">Enviar Mensaje
+            </button>
+        </form>
+    </div>
+
+    <!-- Modal -->
+    <div id="id01" class="w3-modal">
+        <div class="w3-modal-content">
+            <header class="w3-container w3-indigo">
+        <span onclick="document.getElementById('id01').style.display='none'"
+              class="w3-button w3-display-topright">&times;</span>
+                <h2>Contacto</h2>
+            </header>
+            <div class="w3-container">
+                <p>Gracias! Pronto estaremos en contacto!</p>
+
+            </div>
+            <footer class="w3-container w3-indigo">
+                <p>Que tengas un buen día! te lo desea: <br> Grupo de Narrativa Interactiva</p>
+            </footer>
+        </div>
+    </div>
+
+
+    <!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px">
+    <p class="w3-right">Copyright 2019 © José Dávalos</p>
+</div>
+
+<script>
+    // Script to open and close sidebar
+    function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+    }
+
+    // Modal Image Gallery
+    function onClick(element) {
+        document.getElementById("img01").src = element.src;
+        document.getElementById("modal01").style.display = "block";
+        var captionText = document.getElementById("caption");
+        captionText.innerHTML = element.alt;
+    }
+
+    function msg() {
+        document.getElementById('id01').style.display = 'block'
+    }
+</script>
+
+</body>
+</html>
